@@ -1,9 +1,9 @@
 #include <MKL25Z4.H>
 #include <stdio.h>
 #include <math.h>
-#include <string.h>
 #include "lcd.h"
 #include "others.h"
+
 volatile unsigned int flag = 0;
 void Button_init(void);
 void PORTA_IRQHandler(void);
@@ -14,7 +14,7 @@ void SysTick_Handler(void);
 void SysTick_Delay(volatile unsigned int count);
 volatile static int systick_count;
 void PIT_delay( int counter);
-volatile unsigned int PIT_count =0; 
+volatile unsigned int PIT_count = 0; 
 int main (void) {
 		//Initializations
 		volatile unsigned int plant1;
@@ -62,6 +62,7 @@ int main (void) {
 				SysTick_Delay(1);
 		//		Symbols();
 			}
+			// Mode 1
 			if (mode == 1){
 			Symbols(); //lcd first writings
 			//Plant 1
@@ -111,6 +112,7 @@ int main (void) {
 			}
 			SysTick_Delay(4);
 			}
+			// MODE 2 CODE
 				if (mode == 2){
 						LCD_command(0x01);
 						if (PIT_count == 1){
