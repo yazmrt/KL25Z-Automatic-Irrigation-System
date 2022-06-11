@@ -1,6 +1,5 @@
 #include <MKL25Z4.H>
 #include <stdio.h>
-#include <math.h>
 #include "lcd.h"
 #include "others.h"
 
